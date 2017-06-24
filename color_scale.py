@@ -1,4 +1,4 @@
-from write_rgb_image import write_rgb_image as write_image
+from utility.write_rgb_image import write_rgb_image as write_image
 import colorsys as cs
 
 
