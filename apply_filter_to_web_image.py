@@ -15,7 +15,7 @@ def apply_filters(image, *filters_to_apply):
 
     image_copy.show()
 
-    return image
+    return image_copy
 
 
 image_size = (500, 500)
