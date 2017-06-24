@@ -4,10 +4,9 @@ import PIL.ImageFilter as filters
 
 def apply_filters(image, *filters_to_apply):
     '''
-        apply_filters(
-            image, PIL.Image
-            *filters_to_apply, list of PIL.ImageFilter
-        )
+    Arguments:
+        image, PIL.Image
+        *filters_to_apply, list of PIL.ImageFilter
     '''
     image_copy = image.copy()
 
