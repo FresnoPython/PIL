@@ -9,6 +9,10 @@ def convert_rgb_percentage_to_255(rgb_percentage):
 
 
 def select_color(x, y, bounds):
+    '''
+    Given (x, y, bounds),
+    Select or generate the color for this point.
+    '''
     hue = x / (bounds[0] * 1.0)
     saturation = y / (bounds[1] * 1.0)
 

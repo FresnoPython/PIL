@@ -9,8 +9,12 @@ def convert_rgb_percentage_to_255(rgb_percentage):
 
 
 def select_color(x, y, bounds, color_functions):
-    def scale(val, mag=max(bounds)):
-        return (val % mag) / (mag * 1.0)
+    '''
+    Given (x, y, bounds, color_functions),
+    Select or generate the color for this point.
+    '''
+    def scale(value, mag=max(bounds)):
+        return (value % mag) / (mag * 1.0)
 
     red = color_functions['red'](x, y)
     green = color_functions['green'](x, y)
@@ -28,6 +32,8 @@ def select_color(x, y, bounds, color_functions):
 
 
 '''
+DEMO: modify these color_functions to change the outcome
+
 Some functions to try:
 
 (x**2 + y**2) / (x + y + 1),
@@ -35,10 +41,7 @@ Some functions to try:
 x % (y + 1),
 
 y**2 + x**3,
-
-
 '''
-
 color_functions = {
     'red': (lambda x, y: x + y),
     'green': (lambda x, y: x),

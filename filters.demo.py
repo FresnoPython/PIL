@@ -23,5 +23,6 @@ image = fetch_random_image(image_size)
 
 image.show()
 
+# DEMO: change the filters below to see how the image changes
 # Use `help(filters)` or `pydoc PIL.ImageFilter` to find available filters.
 apply_filters(image, filters.DETAIL, filters.CONTOUR)

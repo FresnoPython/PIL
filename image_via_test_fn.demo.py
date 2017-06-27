@@ -2,6 +2,10 @@ from utility.write_rgb_image import write_rgb_image as write_image
 
 
 def select_color(x, y, bounds, color_signature):
+    '''
+    Given (x, y, bounds, color_signature),
+    Select the color for this point.
+    '''
     show_fg = color_signature['test'](x, y, bounds)
 
     return {
@@ -9,6 +13,9 @@ def select_color(x, y, bounds, color_signature):
         'y': y,
         'color': color_signature['fg'] if show_fg else color_signature['bg']
     }
+
+
+''' Tests to determine if x,y is colored '''
 
 
 def if_sum_of_digits_is_lt_20(x, y, bounds):
@@ -40,12 +47,16 @@ def if_prime(x, y, bounds):
     # Hint: try out x%(y+1) and x*y
     return test_prime(x + y)
 
+
+# DEMO: change the test to see what happens to the outcome
 color_signature = {
     'test': if_prime,
-    'fg': (255, 255, 255),
-    'bg': (0, 0, 0),
+    'fg': (255, 255, 255),  # Selected color if test returns true.
+    'bg': (0, 0, 0),  # Ditto for false.
 }
+
 bounds = (600, 600)
+
 colors = [
     select_color(x, y, bounds, color_signature)
     for x in range(bounds[0])

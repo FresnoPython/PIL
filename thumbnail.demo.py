@@ -10,7 +10,7 @@ def create_thumbnail(image, thumbnail_size=(100, 100)):
     return image_copy
 
 
-image_size = (500, 500)
+image_size = (500, 500)  # Size of random image
 image = fetch_random_image(image_size)
 
 image.show()
